@@ -30,7 +30,7 @@ SYSTEM_SIZE = 7
 # For continuing the training of an agent
 continue_training = False
 # this file is stored in the network folder and contains the trained agent.  
-NETWORK_FILE_NAME = 'size_7_NN_17'
+NETWORK_FILE_NAME = 'test2'
 
 # initialize RL class and training parameters 
 rl = RL(Network=NETWORK,
@@ -61,10 +61,10 @@ if continue_training == True:
     rl.load_network(PATH2)
 
 # train for n epochs the agent (test parameters)
-rl.train_for_n_epochs(training_steps=50,
+rl.train_for_n_epochs(training_steps=10000,
                     num_of_predictions=1,
                     num_of_steps_prediction=5,
-                    epochs=1,
+                    epochs=10,
                     target_update=10,
                     optimizer='Adam',
                     batch_size=1,
