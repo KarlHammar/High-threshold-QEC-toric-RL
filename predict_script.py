@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # common system sizes are 3,5,7 and 9 
 # grid size must be odd! 
-system_size = 7
+system_size = 9
 
 # valid network names: 
 #   NN_11
