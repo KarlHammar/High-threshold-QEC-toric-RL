@@ -31,7 +31,7 @@ network = NN_17
 # this file is stored in the network folder and contains the trained agent.  
 NETWORK_FILE_NAME = 'Size_7_NN_17'
 
-num_of_predictions = 100
+num_of_predictions = 101
 
 # initialize RL class
 rl = RL(Network=network,
