@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # common system sizes are 3,5,7 and 9 
 # grid size must be odd! 
-system_size = 9
+system_size = 7
 
 # valid network names: 
 #   NN_11
@@ -31,7 +31,7 @@ network = NN_17
 # this file is stored in the network folder and contains the trained agent.  
 NETWORK_FILE_NAME = 'Size_7_NN_17'
 
-num_of_predictions = 1
+num_of_predictions = 100
 
 # initialize RL class
 rl = RL(Network=network,
