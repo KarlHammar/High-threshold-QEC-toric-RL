@@ -419,6 +419,11 @@ class RL():
                                                                                                                                                                         minimum_nbr_of_qubit_errors=int(self.system_size/2)+1,
                                                                                                                                                                         save_prediction=True,
                                                                                                                                                                         num_of_steps=num_of_steps_prediction)
+            # Print evaluation lists after each epoch
+            print(error_corrected_list, 'error corrected')
+            print(ground_state_list, 'ground state conserved')
+            print(average_number_of_steps_list, 'average number of steps')
+            print(mean_q_list, 'mean q value')
 
             data_all = np.append(data_all, np.array([[self.system_size, self.network_name, i+1, self.replay_memory, self.device, self.learning_rate, target_update, optimizer,
                 self.discount_factor, training_steps * (i+1), mean_q_list[0], prediction_list_p_error[0], num_of_predictions, len(failed_syndroms)/2, error_corrected_list[0], ground_state_list[0], average_number_of_steps_list[0],failure_rate, self.p_error]]), axis=0)
