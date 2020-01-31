@@ -30,7 +30,7 @@ SYSTEM_SIZE = 7
 # For continuing the training of an agent
 continue_training = False
 # this file is stored in the network folder and contains the trained agent.  
-NETWORK_FILE_NAME = 'test2'
+NETWORK_FILE_NAME = 'Size_7_NN_17'
 
 # initialize RL class and training parameters 
 rl = RL(Network=NETWORK,
