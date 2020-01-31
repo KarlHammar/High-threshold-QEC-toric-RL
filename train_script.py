@@ -30,7 +30,7 @@ SYSTEM_SIZE = 5
 # For continuing the training of an agent
 continue_training = False
 # this file is stored in the network folder and contains the trained agent.  
-NETWORK_FILE_NAME = 'TestEval4'
+NETWORK_FILE_NAME = 'TestEval5'
 
 # initialize RL class and training parameters 
 rl = RL(Network=NETWORK,
@@ -40,7 +40,7 @@ rl = RL(Network=NETWORK,
         replay_memory_capacity=20000, 
         learning_rate=0.00025,
         discount_factor=0.95,
-        max_nbr_actions_per_episode=5,
+        max_nbr_actions_per_episode=10,  # [50], max steps allowed during training
         device=device,
         replay_memory='proportional')   # proportional  
                                         # uniform
@@ -61,16 +61,16 @@ if continue_training == True:
     rl.load_network(PATH2)
 
 # train for n epochs the agent (test parameters)
-rl.train_for_n_epochs(training_steps=5000,
-                    num_of_predictions=1,
-                    num_of_steps_prediction=5,
-                    epochs=20,
-                    target_update=10,
-                    optimizer='Adam',
-                    batch_size=1,
-                    directory_path = PATH,
-                    prediction_list_p_error=[0.1],
-                    replay_start_size=48)
+rl.train_for_n_epochs(training_steps=5000, # [-], number of episodes per epoch
+                    num_of_predictions=100, # [100], number of predicions when evaluating
+                    num_of_steps_prediction=10, # [50], number of allowed steps when evaluating
+                    epochs=20,  # [-], "epochs", how many times to do training_steps episodes
+                    target_update=100,  # [100], how often to update target net
+                    optimizer='Adam',  # ['Adam'], 'Adam' or 'RMSprop'
+                    batch_size=32, # [32], how many episodes to batch together (during training?)
+                    directory_path = PATH, # where to save
+                    prediction_list_p_error=[0.1],  # [[0.1]],  list of p_error to use when evaluating
+                    replay_start_size=32) # [32] 
 
 
 """ rl.train_for_n_epochs(training_steps=10000,

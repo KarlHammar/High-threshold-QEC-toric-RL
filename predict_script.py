@@ -16,7 +16,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # common system sizes are 3,5,7 and 9
 # grid size must be odd!
-system_size = 7
+system_size = 5
 
 # valid network names:
 #   NN_11
@@ -26,12 +26,12 @@ system_size = 7
 #   ResNet50
 #   ResNet101
 #   ResNet152
-network = NN_17
+network = NN_11
 
 # this file is stored in the network folder and contains the trained agent.  
-NETWORK_FILE_NAME = 'Size_7_NN_17'
+NETWORK_FILE_NAME = 'FirstLongNN11s5'
 
-num_of_predictions = 1
+num_of_predictions = 1000
 
 # initialize RL class
 rl = RL(Network=network,
@@ -43,7 +43,7 @@ rl = RL(Network=network,
 # generate syndrome with error probability 0.1
 prediction_list_p_error = [0.1]
 # generate syndrome with a fixed amount of errors 
-minimum_nbr_of_qubit_errors = int(system_size/2)+1  # minimum number of erorrs for logical qubit flip
+minimum_nbr_of_qubit_errors = 0#int(system_size/2)+1  # minimum number of erorrs for logical qubit flip
 
 # Generate folder structure, all results are stored in the data folder 
 timestamp = time.strftime("%y_%m_%d__%H_%M_%S__")
