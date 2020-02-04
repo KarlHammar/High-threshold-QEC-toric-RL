@@ -10,7 +10,7 @@ from src.util import conv_to_fully_connected, pad_circular
 class NN_11(nn.Module):
 
     def __init__(self, system_size, number_of_actions, device):
-        super(NN_11, self).__init__()
+        super(NN_11, self).__init__()  # structure with kernel_size 3, stride 1 and padding 1 preserves size through network
         self.conv1 = nn.Conv2d(2, 128, kernel_size=3, stride=1)
         self.conv2 = nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1)
         self.conv3 = nn.Conv2d(128, 120, kernel_size=3, stride=1, padding=1)

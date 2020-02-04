@@ -21,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #   ResNet50
 #   ResNet101
 #   ResNet152
-NETWORK = NN_11
+NETWORK = NN_17
 
 # common system sizes are 3,5,7 and 9 
 # grid size must be odd! 
@@ -30,7 +30,7 @@ SYSTEM_SIZE = 5
 # For continuing the training of an agent
 continue_training = False
 # this file is stored in the network folder and contains the trained agent.  
-NETWORK_FILE_NAME = 'TestEval5'
+NETWORK_FILE_NAME = 'Test1_NN17_Size_5'
 
 # initialize RL class and training parameters 
 rl = RL(Network=NETWORK,
@@ -69,7 +69,7 @@ rl.train_for_n_epochs(training_steps=5000, # [-], number of episodes per epoch
                     optimizer='Adam',  # ['Adam'], 'Adam' or 'RMSprop'
                     batch_size=32, # [32], how many episodes to batch together (during training?)
                     directory_path = PATH, # where to save
-                    prediction_list_p_error=[0.1],  # [[0.1]],  list of p_error to use when evaluating
+                    prediction_list_p_error=[0.06,0.10,0.14],  # [[0.1]],  list of p_error to use when evaluating
                     replay_start_size=32) # [32] 
 
 

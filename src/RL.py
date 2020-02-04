@@ -189,7 +189,7 @@ class RL():
         epsilon_decay = np.round((epsilon_start-epsilon_end)/num_of_epsilon_steps, 5)
         epsilon_update = num_of_steps * reach_final_epsilon
         # main loop over training steps 
-        while iteration < training_steps:
+        while iteration < training_steps: # include tqdm here?
             num_of_steps_per_episode = 0
             # initialize syndrom
             self.toric = Toric_code(self.system_size)
@@ -416,7 +416,7 @@ class RL():
             # evaluate network
             error_corrected_list, ground_state_list, average_number_of_steps_list, mean_q_list, failed_syndroms, ground_state_list, prediction_list_p_error, failure_rate = self.prediction(num_of_predictions=num_of_predictions, 
                                                                                                                                                                         prediction_list_p_error=prediction_list_p_error, 
-                                                                                                                                                                        minimum_nbr_of_qubit_errors=int(self.system_size/2)+1,
+                                                                                                                                                                        minimum_nbr_of_qubit_errors=0,#int(self.system_size/2)+1,  # why is this not taken from args? evaluation bad?
                                                                                                                                                                         save_prediction=True,
                                                                                                                                                                         num_of_steps=num_of_steps_prediction)
             # Print evaluation lists after each epoch
