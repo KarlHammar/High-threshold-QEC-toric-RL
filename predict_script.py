@@ -31,7 +31,7 @@ network = NN_11
 # this file is stored in the network folder and contains the trained agent.  
 NETWORK_FILE_NAME = 'FirstLongNN11s5'
 
-num_of_predictions = 1000
+num_of_predictions = 100
 
 # initialize RL class
 rl = RL(Network=network,
@@ -41,7 +41,7 @@ rl = RL(Network=network,
 
 # initial syndrome error generation
 # generate syndrome with error probability 0.1
-prediction_list_p_error = [0.1,0.11,0.12,0.13,0.14]
+prediction_list_p_error = [0.1,0.11,0.12,0.13,0.14,0.15,0.16,0.17,0.18,0.19]
 # generate syndrome with a fixed amount of errors 
 minimum_nbr_of_qubit_errors = 0#int(system_size/2)+1  # minimum number of erorrs for logical qubit flip
 
